@@ -1,0 +1,30 @@
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import RegisterPage from "./pages/RegisterPage";
+import DonorDashboard from "./pages/DonorDashboard";
+import RecipientDashboard from "./pages/RecipientDashboard";
+import WaitingListPage from "./pages/WaitingListPage";
+import MatchesPage from "./pages/MatchesPage";
+import DonorsInfoPage from "./pages/DonorsInfoPage";
+import RecipientsInfoPage from "./pages/RecipientsInfoPage";
+
+export default function App() {
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      <main className="mx-auto max-w-6xl p-4">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/donors-info" element={<DonorsInfoPage />} />
+          <Route path="/recipients-info" element={<RecipientsInfoPage />} />
+          <Route path="/donor" element={<DonorDashboard />} />
+          <Route path="/recipient" element={<RecipientDashboard />} />
+          <Route path="/waiting-list" element={<WaitingListPage />} />
+          <Route path="/matches" element={<MatchesPage />} />
+        </Routes>
+      </main>
+    </div>
+  );
+}
